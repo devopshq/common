@@ -7,9 +7,8 @@ import os
 
 __version__ = '1.0'
 
-devStatus = '4 - Beta'  # Билд-статус по умолчанию, смотрите: https://pypi.python.org/pypi?%3Aaction=list_classifiers
+devStatus = '4 - Beta'  # https://pypi.python.org/pypi?%3Aaction=list_classifiers
 
-# Логика версионирования в зависимости от веток настраивается ниже:
 if 'TRAVIS_BUILD_NUMBER' in os.environ and 'TRAVIS_BRANCH' in os.environ:
     print("This is TRAVIS-CI build")
     print("TRAVIS_BUILD_NUMBER = {}".format(os.environ['TRAVIS_BUILD_NUMBER']))
@@ -24,9 +23,9 @@ if 'TRAVIS_BUILD_NUMBER' in os.environ and 'TRAVIS_BRANCH' in os.environ:
 
 else:
     print("This is local build")
-    __version__ += '.dev0'  # set version as major.minor.localbuild if local build: python setup.py install
+    __version__ += '.dev0'
 
-print("dohq-common build version = {}".format(__version__))  # Перед сборкой выведется сообщение о том, какая версия собирается
+print("dohq-common build version = {}".format(__version__))
 
 setup(
     name='dohq-common',
