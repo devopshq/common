@@ -70,21 +70,22 @@ setup(
 
     tests_require=[
         'pytest',
-        'crosspm'
+        'crosspm',
+        'addict'
     ],
 
     install_requires=[ 
     ],
 
     package_data={
-        "": [
-            "./dohq-common/*.py",
+        '': [
+            './dohq-common/*.py',
 
-            "./tests/*.py",
+            './tests/*.py',
 
-            "LICENSE",
-            "README.md",
-            "README_RU.md",
+            'LICENSE',
+            'README.md',
+            'README_RU.md',
         ],
     },
 

@@ -6,11 +6,11 @@ branches:
   - develop
 
 install:
-  - pip install pytest coverage codacy-coverage
+  - pip install pytest coverage codacy-coverage addict
 
 script:
-  - echo "coverage run -m py.test tests"
-  - echo "coverage xml"
+  - coverage run -m py.test tests
+  - coverage xml
 
 deploy:
   provider: pypi
