@@ -6,7 +6,7 @@ branches:
   - develop
 
 install:
-  - pip install pytest coverage codacy-coverage addict
+  - pip install pytest coverage codacy-coverage addict crosspm
 
 script:
   - coverage run -m py.test tests
