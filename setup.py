@@ -71,6 +71,7 @@ setup(
 
     tests_require=[
         'pytest',
+        'crosspm'
     ],
 
     install_requires=[ 
