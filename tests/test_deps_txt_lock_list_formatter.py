@@ -4,11 +4,11 @@ from addict import Dict
 
 from dohq_common.deps_txt_lock_list_formatter import DepsTxtLockListFormatter
 
-def get_packages():
 
+def get_packages():
     base = [
         ["db", "2.5.2", "/db_2.5.2_all.deb"],
-        ["be",  "2.5.4",  "/project2.5/backend/be_2.5.4_all.deb"],
+        ["be", "2.5.4", "/project2.5/backend/be_2.5.4_all.deb"],
         ["ui", "2.5.3", "/ui_2.5.3_all.deb"],
     ]
 
@@ -24,6 +24,7 @@ def get_packages():
 
     return packages
 
+
 etalon_deps_lock_file = """db  2.5.2  /db_2.5.2_all.deb
 be  2.5.4  /project2.5/backend/be_2.5.4_all.deb
 ui  2.5.3  /ui_2.5.3_all.deb"""
@@ -34,6 +35,7 @@ def test_write_packages_to_lock_file():
     DepsTxtLockListFormatter.write_packages_to_lock_file(deps_lock_stream, get_packages())
     deps_lock = deps_lock_stream.getvalue()
     assert etalon_deps_lock_file == deps_lock
+
 
 def test_read_packages_from_lock_file():
     deps_lock_stream = io.StringIO(etalon_deps_lock_file)

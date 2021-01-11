@@ -25,6 +25,7 @@ def test_success_is_package_fullname_match_version_pattern(test_package):
     deps = DepsTxtSimpleParser(deps_txt.splitlines())
     assert deps.is_package_fullname_match_version_pattern(DebianPackageNameParser.parse_from_package_name(test_package))
 
+
 @pytest.mark.parametrize(
     "test_package",
     [
@@ -37,4 +38,5 @@ def test_success_is_package_fullname_match_version_pattern(test_package):
 )
 def test_failure_is_package_fullname_match_version_pattern(test_package):
     deps = DepsTxtSimpleParser(deps_txt.splitlines())
-    assert not deps.is_package_fullname_match_version_pattern(DebianPackageNameParser.parse_from_package_name(test_package))
+    assert not deps.is_package_fullname_match_version_pattern(
+        DebianPackageNameParser.parse_from_package_name(test_package))

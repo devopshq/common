@@ -8,15 +8,16 @@
 
 See russian readme here (инструкция на русском здесь): https://github.com/devopshq/common/blob/master/README_RU.md
 
-
 ## Setup
 
 The easiest way is to install via PyPI:
+
 ```commandline
 pip install dohq-common
 ```
 
 After that, you can check the installation with the command:
+
 ```commandline
 pip show dohq-common
 ```
