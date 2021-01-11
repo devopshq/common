@@ -9,8 +9,10 @@ install:
   - pip install pytest coverage codacy-coverage
 
 script:
+  - set -e
+  - flake8 dohq_common
   - coverage run -m py.test tests
-  - echo "coverage xml"
+  - coverage xml
 
 deploy:
   provider: pypi
