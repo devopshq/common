@@ -62,7 +62,7 @@ setup(
     ],
 
     packages=[
-        'dohq-common',
+        'dohq_common',
     ],
 
     setup_requires=[ 
@@ -70,7 +70,6 @@ setup(
 
     tests_require=[
         'pytest',
-        'crosspm'
     ],
 
     install_requires=[ 
@@ -78,7 +77,7 @@ setup(
 
     package_data={
         "": [
-            "./dohq-common/*.py",
+            "./dohq_common/*.py",
 
             "./tests/*.py",
 
