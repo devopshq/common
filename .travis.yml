@@ -9,7 +9,7 @@ install:
   - pip install pytest coverage codacy-coverage
 
 script:
-  - echo "coverage run -m py.test tests"
+  - coverage run -m py.test tests
   - echo "coverage xml"
 
 deploy:
