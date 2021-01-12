@@ -2,7 +2,7 @@ import io
 
 from addict import Dict
 
-from dohq_common.deps_txt_lock_list_formatter import DepsTxtLockListFormatter
+from dohq_common.deps_txt.deps_txt_lock_list_formatter import DepsTxtLockListFormatter
 
 
 def get_packages():

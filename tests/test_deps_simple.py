@@ -2,7 +2,7 @@ import pytest
 
 # from  dohq_common.deps_simple import import DepsTxtSimpleParser
 
-from dohq_common.deps_simple import DepsTxtSimpleParser
+from dohq_common.deps_txt.deps_txt_simple import DepsTxtSimpleParser
 from dohq_common.package_parsers.debian_package_name_parser import DebianPackageNameParser
 
 deps_txt = """be 2.6.*- contracts.db
