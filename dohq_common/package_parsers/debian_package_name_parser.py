@@ -1,6 +1,8 @@
 import packaging
 from parse import compile
 
+from dohq_common.exceptions import PackageInvalidVersion
+
 DEBIAN_PACKAGENAME_PATTERN = compile('{}_{}_{}.deb')
 
 
@@ -26,7 +28,7 @@ class DebianPackageNameParser:
             version, sep, revision = fullversion.partition('-')
             return DebianPackageNameParser(package, version, revision, arch)
         except TypeError:
-            raise packaging.version.InvalidVersion(
+            raise PackageInvalidVersion(
                 f"package name <{package_name}> mismatch debian name convension pattern <foo>_<Version>_<DebianArchitecture>.deb")
 
     def __str__(self):
