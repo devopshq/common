@@ -36,7 +36,23 @@ class PackageMatch:
 
 class DepsTxtSimpleParser:
     def __init__(self, deps_txt):
+
+        self.package_matches = []
+
+        for i, line in enumerate(deps_txt):
+            line = line.strip()
+
+            if not line or line.startswith(('#', '[',)):
+                continue
+
+            self.package_matches.append(PackageMatch(line))
+
         self.package_matches = [PackageMatch(line) for line in deps_txt]
 
     def is_package_fullname_match_version_pattern(self, package):
         return any(match.is_package_fullname_match_version_pattern(package) for match in self.package_matches)
+
+class DepsTxtSimpleReader(DepsTxtSimpleParser):
+    def __init__(self, path):
+        with open(path, newline='', encoding='utf-8-sig') as f:
+            super().__init__(f)
