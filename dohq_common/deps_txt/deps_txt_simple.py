@@ -47,7 +47,6 @@ class DepsTxtSimpleParser:
 
             self.package_matches.append(PackageMatch(line))
 
-        self.package_matches = [PackageMatch(line) for line in deps_txt]
 
     def is_package_fullname_match_version_pattern(self, package):
         return any(match.is_package_fullname_match_version_pattern(package) for match in self.package_matches)
