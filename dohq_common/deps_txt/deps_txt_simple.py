@@ -17,7 +17,7 @@ class PackageMatch:
             self.version_pattern = f"{self.version_pattern[:-1]}|!*-*"
 
         if placeholders_count == 3:
-            self.contracts = placeholders[2]
+            self.contracts = [c for c in placeholders[2].strip().split(';')]
         else:
             self.contracts = []
 
@@ -35,11 +35,11 @@ class PackageMatch:
 
 
 class DepsTxtSimpleParser:
-    def __init__(self, deps_txt):
+    def __init__(self, deps_txt_iter):
 
         self.package_matches = []
 
-        for i, line in enumerate(deps_txt):
+        for i, line in enumerate(deps_txt_iter):
             line = line.strip()
 
             if not line or line.startswith(('#', '[',)):
