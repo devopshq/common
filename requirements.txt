@@ -1,0 +1,6 @@
+dohq-artifactory==0.4.112; python_version < '3.5'
+dohq-artifactory>=0.7.377; python_version >= '3.5'
+addict==2.2.1
+tabulate>=0.8.7
+parse>=1.15.0
+wcmatch

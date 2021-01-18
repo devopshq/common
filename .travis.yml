@@ -1,16 +1,18 @@
 language: python
-python: '3.7'
+python: '3.6'
 branches:
   only:
-  - master
-  - develop
+    - master
+    - develop
 
 install:
-  - pip install pytest coverage codacy-coverage addict crosspm
+  - pip install -r requirements-ci.txt
 
 script:
-  - echo "coverage run -m py.test tests"
-  - echo "coverage xml"
+  - set -e
+  - flake8 dohq_common
+  - coverage run -m py.test tests
+  - coverage xml
 
 deploy:
   provider: pypi

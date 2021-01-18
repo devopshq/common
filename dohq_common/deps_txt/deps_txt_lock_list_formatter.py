@@ -1,5 +1,7 @@
 from tabulate import tabulate
 
+from dohq_common.exceptions import DepsTxtLockInvalidLine
+
 
 class DepsTxtLockListFormatter:
     def __init__(self):
@@ -26,8 +28,11 @@ class DepsTxtLockListFormatter:
 
             p = sline.split()
             if len(p) != 3:
-                raise Exception(
-                    f"Line {i} invalid, expect 3 columns, but has {len(p)}:\n<<<{line}>>>\nsplitted into: {p}\nExpect format of line as:\n<name> <version> <path>")
+                raise DepsTxtLockInvalidLine(
+                    f"Line {i} invalid, expect 3 columns,"
+                    "but has {len(p)}:\n<<<{line}>>>\n"
+                    "splitted into: {p}\n"
+                    "Expect format of line as:\n<name> <version> <path>")
             paths.append(p[2])
 
         return paths

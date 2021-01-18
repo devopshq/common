@@ -1,7 +1,9 @@
 import pytest
 
-from deps_txt_parsers.deps_simple import DepsTxtSimpleParser
-from package_parsers.debian_package_name_parser import DebianPackageNameParser
+# from  dohq_common.deps_simple import import DepsTxtSimpleParser
+
+from dohq_common.deps_txt.deps_txt_simple import DepsTxtSimpleParser
+from dohq_common.package_parsers.debian_package_name_parser import DebianPackageNameParser
 
 deps_txt = """be 2.6.*- contracts.db
 ui 3.* contracts.rest;contracts.ui"""
@@ -23,6 +25,7 @@ def test_success_is_package_fullname_match_version_pattern(test_package):
     deps = DepsTxtSimpleParser(deps_txt.splitlines())
     assert deps.is_package_fullname_match_version_pattern(DebianPackageNameParser.parse_from_package_name(test_package))
 
+
 @pytest.mark.parametrize(
     "test_package",
     [
@@ -35,4 +38,5 @@ def test_success_is_package_fullname_match_version_pattern(test_package):
 )
 def test_failure_is_package_fullname_match_version_pattern(test_package):
     deps = DepsTxtSimpleParser(deps_txt.splitlines())
-    assert not deps.is_package_fullname_match_version_pattern(DebianPackageNameParser.parse_from_package_name(test_package))
+    assert not deps.is_package_fullname_match_version_pattern(
+        DebianPackageNameParser.parse_from_package_name(test_package))

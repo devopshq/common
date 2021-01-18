@@ -19,7 +19,8 @@ if 'TRAVIS_BUILD_NUMBER' in os.environ and 'TRAVIS_BRANCH' in os.environ:
         os.environ['TRAVIS_BUILD_NUMBER'],
     )
 
-    devStatus = '5 - Production/Stable' if 'release' in os.environ['TRAVIS_BRANCH'] or os.environ['TRAVIS_BRANCH'] == 'master' else devStatus
+    devStatus = '5 - Production/Stable' if 'release' in os.environ['TRAVIS_BRANCH'] or os.environ[
+        'TRAVIS_BRANCH'] == 'master' else devStatus
 
 else:
     print("This is local build")
@@ -62,10 +63,10 @@ setup(
     ],
 
     packages=[
-        'dohq-common',
+        'dohq_common',
     ],
 
-    setup_requires=[ 
+    setup_requires=[
     ],
 
     tests_require=[
@@ -74,7 +75,7 @@ setup(
         'addict'
     ],
 
-    install_requires=[ 
+    install_requires=[
     ],
 
     package_data={
