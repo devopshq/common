@@ -64,6 +64,8 @@ setup(
 
     packages=[
         'dohq_common',
+        "dohq_common.deps_txt",
+        "dohq_common.package_parsers"
     ],
 
     setup_requires=[
