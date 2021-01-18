@@ -1,4 +1,3 @@
-import packaging
 from parse import compile
 
 from dohq_common.exceptions import PackageInvalidVersion
